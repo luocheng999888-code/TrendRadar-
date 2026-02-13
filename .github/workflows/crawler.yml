@@ -10,7 +10,8 @@ on:
     #    - 每个周期为 7 天，届时自动停止
     #    - 运行 "Check In" 会重置周期（重新开始 7 天倒计时，而非累加）
     #    - Each cycle is 7 days, then auto-stops
-    #    - "Check In" resets the cycle (restarts 7-day countdown, not cumulative)
+    #    - "Check In" resets the cycle (restarts 7-day countdown, not cumulative)  
+# - “签到”会重置周期（重新开始 7 天倒计时，而不是累积）
     #
     # 💡 设计初衷 / Why this design:
     #    如果 7 天都忘了签到，或许这些资讯对你来说并非刚需
@@ -32,10 +33,11 @@ on:
     # 📝 Change time: Only modify the first number (0-59) = minute of each hour
     #
     # 示例 / Examples:
-    #   "15 * * * *"     → 每小时第15分钟 / minute 15 every hour
+    #   "15 * * * *"     → 每小时第15分钟 / minute 15 every hour  
+#“15 * * * *” → 蹲起第 15 分钟/分钟 每小时 15
     #   "30 0-14 * * *"  → 北京时间 8:00-22:00 每小时第30分钟 / Beijing 8am-10pm
     #
-    - cron: "33 * * * *"
+    - cron: "33 0 * * *" 
 
   workflow_dispatch:
 
